@@ -22,10 +22,10 @@ def Dice3d(a, b):
     if a.shape != b.shape:
         raise Exception(f"Expecting inputs of the same shape, got {a.shape} and {b.shape}")
 
-    # TASK: Write implementation of Dice3D. If you completed exercises in the lessons
-    # you should already have it.
-    # <YOUR CODE HERE>
-    pass
+    
+    intersection = np.sum((a>0)*(b>0))
+    total = np.sum((a>0)) + np.sum((b>0))
+    return 2.*float(intersection)/float(total)
 
 def Jaccard3d(a, b):
     """
@@ -46,8 +46,8 @@ def Jaccard3d(a, b):
     if a.shape != b.shape:
         raise Exception(f"Expecting inputs of the same shape, got {a.shape} and {b.shape}")
 
-    # TASK: Write implementation of Jaccard similarity coefficient. Please do not use 
-    # the Dice3D function from above to do the computation ;)
-    # <YOUR CODE GOES HERE>
 
-    return #
+   
+    intersection = np.sum((a>0)*(b>0))
+    denom = np.sum((a>0)) + np.sum((b>0)) - intersection
+    return float(intersection)/float(denom)    
