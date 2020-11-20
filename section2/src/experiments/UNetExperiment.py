@@ -44,9 +44,8 @@ class UNetExperiment:
         os.makedirs(self.out_dir, exist_ok=True)
 
         # Create data loaders
-        # TASK: SlicesDataset class is not complete. Go to the file and complete it. 
-        # Note that we are using a 2D version of UNet here, which means that it will expect
-        # batches of 2D slices.
+         
+        
         self.train_loader = DataLoader(SlicesDataset(dataset[split["train"]]),
                 batch_size=config.batch_size, shuffle=True, num_workers=0)
         self.val_loader = DataLoader(SlicesDataset(dataset[split["val"]]),
@@ -61,9 +60,7 @@ class UNetExperiment:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         # Configure our model and other training implements
-        # We will use a recursive UNet model from German Cancer Research Center, 
-        # Division of Medical Image Computing. It is quite complicated and works 
-        # very well on this task. Feel free to explore it or plug in your own model
+\
         self.model = UNet(num_classes=3)
         self.model.to(self.device)
 
@@ -77,7 +74,7 @@ class UNetExperiment:
         # Scheduler helps us update learning rate automatically
         self.scheduler = optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, 'min')
 
-        # Set up Tensorboard. By default it saves data into runs folder. You need to launch
+        # Set up Tensorboard
         self.tensorboard_train_writer = SummaryWriter(comment="_train")
         self.tensorboard_val_writer = SummaryWriter(comment="_val")
 
@@ -93,7 +90,7 @@ class UNetExperiment:
         for i, batch in enumerate(self.train_loader):
             self.optimizer.zero_grad()
 
-            # TASK: You have your data in batch variable. Put the slices as 4D Torch Tensors of 
+            # Put slices as 4D Torch Tensors of 
             # shape [BATCH_SIZE, 1, PATCH_SIZE, PATCH_SIZE] into variables data and target. 
             # Feed data to the model and feed target to the loss function
             # 
@@ -108,8 +105,7 @@ class UNetExperiment:
 
             loss = self.loss_function(prediction, target[:, 0, :, :])
 
-            # TASK: What does each dimension of variable prediction represent?
-            # ANSWER: 0th dimension = batch index, 1st = class probability, 2nd = y pixels, 3rd = z pixels
+            
 
             loss.backward()
             self.optimizer.step()
@@ -120,9 +116,7 @@ class UNetExperiment:
 
                 counter = 100*self.epoch + 100*(i/len(self.train_loader))
 
-                # You don't need to do anything with this function, but you are welcome to 
-                # check it out if you want to see how images are logged to Tensorboard
-                # or if you want to output additional debug data
+              
                 log_to_tensorboard(
                     self.tensorboard_train_writer,
                     loss,
@@ -152,7 +146,7 @@ class UNetExperiment:
         with torch.no_grad():
             for i, batch in enumerate(self.val_loader):
                 
-                # TASK: Write validation code that will compute loss on a validation sample
+                
                 data = batch['image'].to(self.device, dtype = torch.float)
                 target = batch['seg'].to(self.device)
 
@@ -217,8 +211,6 @@ class UNetExperiment:
         # on full 3D volumes, much like we will be doing it when we deploy the model in the 
         # clinical environment. 
 
-        # TASK: Inference Agent is not complete. Go and finish it. Feel free to test the class
-        # in a module of your own by running it against one of the data samples
         inference_agent = UNetInferenceAgent(model=self.model, device=self.device)
 
         out_dict = {}
@@ -233,23 +225,14 @@ class UNetExperiment:
             # We compute and report Dice and Jaccard similarity coefficients which 
             # assess how close our volumes are to each other
 
-            # TASK: Dice3D and Jaccard3D functions are not implemented. 
-            #  Complete the implementation as we discussed
-            # in one of the course lessons, you can look up definition of Jaccard index 
-            # on Wikipedia. If you completed it
-            # correctly (and if you picked your train/val/test split right ;)),
-            # your average Jaccard on your test set should be around 0.80
+            
 
             dc = Dice3d(pred_label, x["seg"])
             jc = Jaccard3d(pred_label, x["seg"])
             dc_list.append(dc)
             jc_list.append(jc)
 
-            # STAND-OUT SUGGESTION: By way of exercise, consider also outputting:
-            # * Sensitivity and specificity (and explain semantic meaning in terms of 
-            #   under/over segmenting)
-            # * Dice-per-slice and render combined slices with lowest and highest DpS
-            # * Dice per class (anterior/posterior)
+            
 
             out_dict["volume_stats"].append({
                 "filename": x['filename'],
