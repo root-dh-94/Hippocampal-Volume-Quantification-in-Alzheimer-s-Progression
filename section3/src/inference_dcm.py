@@ -24,7 +24,7 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 
-from inference.UNetInferenceAgent import UNetInferenceAgent
+from UNetInferenceAgent import UNetInferenceAgent
 
 def load_dicom_volume_as_numpy_from_list(dcmlist):
     """Loads a list of PyDicom objects a Numpy array.
@@ -61,7 +61,9 @@ def get_predicted_volumes(pred):
     """
 
     # TASK: Compute the volume of your hippocampal prediction
-    # <YOUR CODE HERE>
+    volume_ant = np.sum(pred == 1)
+    volume_post = np.sum(pred == 2)
+    total_volume = volume_ant + volume_post
 
     return {"anterior": volume_ant, "posterior": volume_post, "total": total_volume}
 
@@ -87,8 +89,8 @@ def create_report(inference, header, orig_vol, pred_vol):
     pimg = Image.new("RGB", (1000, 1000))
     draw = ImageDraw.Draw(pimg)
 
-    header_font = ImageFont.truetype("assets/Roboto-Regular.ttf", size=40)
-    main_font = ImageFont.truetype("assets/Roboto-Regular.ttf", size=20)
+    header_font = ImageFont.truetype("assets/playfair-display/PlayfairDisplay-Regular.ttf", size=80, encoding = 'unic')
+    main_font = ImageFont.truetype("assets/playfair-display/PlayfairDisplay-Regular.ttf", size=40, encoding = 'unic')
 
     slice_nums = [orig_vol.shape[2]//3, orig_vol.shape[2]//2, orig_vol.shape[2]*3//4] # is there a better choice?
 
@@ -97,13 +99,19 @@ def create_report(inference, header, orig_vol, pred_vol):
     # genius to make if shine. After all, the is the only part of all our machine learning 
     # efforts that will be visible to the world. The usefulness of your computations will largely
     # depend on how you present them.
-
+    
     # SAMPLE CODE BELOW: UNCOMMENT AND CUSTOMIZE
-    # draw.text((10, 0), "HippoVolume.AI", (255, 255, 255), font=header_font)
-    # draw.multiline_text((10, 90),
-    #                     f"Patient ID: {header.PatientID}\n"
-    #                       <WHAT OTHER INFORMATION WOULD BE RELEVANT?>
-    #                     (255, 255, 255), font=main_font)
+    draw.text((10, 0), "HippoVolume.AI", (255, 255, 255), font=header_font)
+    draw.multiline_text((10, 90),
+                        f"Patient ID: {header.PatientID}\n"
+                        f"Patient Name: {header.PatientName}\n"
+                        f"Series Description: {header.SeriesDescription}\n"
+                        f"Series Date: {header.SeriesDate}\n"
+                        f"Modality: {header.Modality}\n"
+                        f"Anterior Hippocampal Volume: {inference['anterior']}\n"
+                        f"Posterior Hippocampal Volume: {inference['posterior']}\n"
+                        f"Total Hippocampal Volume: {inference['total']}\n",
+                        (255, 255, 255), font=main_font)
 
     # STAND-OUT SUGGESTION:
     # In addition to text data in the snippet above, can you show some images?
@@ -216,7 +224,11 @@ def get_series_for_inference(path):
     # Here we are assuming that path is a directory that contains a full study as a collection
     # of files
     # We are reading all files into a list of PyDicom objects so that we can filter them later
-    dicoms = [pydicom.dcmread(os.path.join(path, f)) for f in os.listdir(path)]
+    #dicoms = [pydicom.dcmread(os.path.join(path, f)) for f in os.listdir(path)]
+    dicoms = []
+    for direc , subdirs, file in os.walk(path):
+        for subdir in subdirs:
+            dicoms.extend([pydicom.dcmread(os.path.join(path, subdir, f)) for f in os.listdir(os.path.join(path, subdir))])
 
     # TASK: create a series_for_inference variable that will contain a list of only 
     # those PyDicom objects that represent files that belong to the series that you 
@@ -229,7 +241,7 @@ def get_series_for_inference(path):
     # certain way. Can you figure out which is that? 
     # Hint: inspect the metadata of HippoCrop series
 
-    # <YOUR CODE HERE>
+    series_for_inference = [i for i in dicoms if i.SeriesDescription == 'HippoCrop']
 
     # Check if there are more than one series (using set comprehension).
     if len({f.SeriesInstanceUID for f in series_for_inference}) != 1:
@@ -271,7 +283,7 @@ if __name__ == "__main__":
     # TASK: Use the UNetInferenceAgent class and model parameter file from the previous section
     inference_agent = UNetInferenceAgent(
         device="cpu",
-        parameter_file_path=r"<PATH TO PARAMETER FILE>")
+        parameter_file_path=r"/home/workspace/src/model.pth")
 
     # Run inference
     # TASK: single_volume_inference_unpadded takes a volume of arbitrary size 
@@ -283,7 +295,7 @@ if __name__ == "__main__":
 
     # Create and save the report
     print("Creating and pushing report...")
-    report_save_path = r"<TEMPORARY PATH TO SAVE YOUR REPORT FILE>"
+    report_save_path = r"/home/workspace/out/report.dcm"
     # TASK: create_report is not complete. Go and complete it. 
     # STAND OUT SUGGESTION: save_report_as_dcm has some suggestions if you want to expand your
     # knowledge of DICOM format
@@ -293,7 +305,7 @@ if __name__ == "__main__":
     # Send report to our storage archive
     # TASK: Write a command line string that will issue a DICOM C-STORE request to send our report
     # to our Orthanc server (that runs on port 4242 of the local machine), using storescu tool
-    os_command("<COMMAND LINE TO SEND REPORT TO ORTHANC>")
+    os_command("storescu localhost 4242 -v -aec HIPPOAI +r +sd /home/workspace/out/report.dcm")
 
     # This line will remove the study dir if run as root user
     # Sleep to let our StoreSCP server process the report (remember - in our setup
