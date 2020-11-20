@@ -1,0 +1,342 @@
+[33mcommit 7091c17b30e38b29a87f54e14ddf60701a1691d6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Christa Cheung <christa.cheung@udacity.com>
+Date:   Tue May 12 09:34:16 2020 -0700
+
+    update readme and inference_dcm.py
+
+[33mcommit c7fa360c0c52d9f1663285d787d7b9878d2b99af[m
+Author: Christa Cheung <christa.cheung@udacity.com>
+Date:   Mon May 11 23:46:40 2020 -0700
+
+    add .DS_Store files to gitignore
+
+[33mcommit 70c4d4bc1ab59f3e70d95b437464c4c6013ac956[m
+Merge: 385723a c66304b
+Author: Christa Cheung <christa.cheung@udacity.com>
+Date:   Mon May 11 23:44:29 2020 -0700
+
+    Merge branch 'master' of https://github.com/udacity/nd320-c3-3d-imaging-starter
+
+[33mcommit 385723a52931d635f49c2dd6f7788cf496bd75e7[m
+Author: Christa Cheung <christa.cheung@udacity.com>
+Date:   Mon May 11 23:41:19 2020 -0700
+
+    clear gitignore
+
+[33mcommit 90edbfa7b324644e5b92358e54cf26e95b77cd0f[m
+Author: Christa Cheung <christa.cheung@udacity.com>
+Date:   Mon May 11 23:37:59 2020 -0700
+
+    new update
+
+[33mcommit c66304b608b803130062b8bcc92e7234cd115fc0[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Fri May 8 22:52:17 2020 -0700
+
+    Delete .DS_Store
+
+[33mcommit 6ffe090ea0d53cf8ae5f6dd2e6aebe516bfeceab[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 22:01:45 2020 -0700
+
+    Delete .DS_Store
+
+[33mcommit f324b3cd2ddf5e444a31f5d2fffb7c339a561229[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 22:01:29 2020 -0700
+
+    Delete .DS_Store
+
+[33mcommit 6f433b36c4e371addfd329f707cb0c68a22f81e6[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 22:00:48 2020 -0700
+
+    Update README.md
+
+[33mcommit a3444ba0a28787e9e95dbb84a1210ba38cdde1b5[m
+Author: Christa Cheung <christa.cheung@udacity.com>
+Date:   Sun Mar 29 21:47:29 2020 -0700
+
+    transfer from src
+
+[33mcommit 64c44503fabd79cce2b1a33e023a72b2a690b9d8[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 21:40:14 2020 -0700
+
+    Add files via upload
+
+[33mcommit 2ed11542a858af9694230e7723a8132fc869c7e0[m
+Author: Christa Cheung <christa.cheung@udacity.com>
+Date:   Sun Mar 29 21:25:46 2020 -0700
+
+    remove del.md and upload the larger dataset that is +25MB
+
+[33mcommit 3ebaefbc646e67c4dcfe9f4254f1da21966cb222[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 21:18:55 2020 -0700
+
+    Add files via upload
+
+[33mcommit e14d9bf807e36ad060f178f0c6af0ca205c1dace[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 21:14:57 2020 -0700
+
+    Add files via upload
+
+[33mcommit 9e4753fc9a78fb2c68a3fe1a4d01acc9c7114f01[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 21:11:04 2020 -0700
+
+    Add files via upload
+
+[33mcommit 2fdb759530998e3483adde3d8e2603ee406a9342[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 21:07:13 2020 -0700
+
+    Add files via upload
+
+[33mcommit 68dd25e69442f1fd232bc70e4b8461836c4e5479[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 21:05:43 2020 -0700
+
+    Add files via upload
+
+[33mcommit ff0d428d1f467cd5359e3db66c7bab5915c2c30e[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 21:02:29 2020 -0700
+
+    Add files via upload
+
+[33mcommit 564c743e52e6f267ab2f8c23172f24d490439f72[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 21:00:17 2020 -0700
+
+    Add files via upload
+
+[33mcommit 8098e788dd7c687f9ea140b4353a244b7644a224[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:57:55 2020 -0700
+
+    Create del.md
+
+[33mcommit fc9fffee4eb3609a594ba96f0640f88a03ccc23b[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:57:36 2020 -0700
+
+    Create del.md
+
+[33mcommit dbaa69741ebc06ed756c447a49a3ca5efd56025d[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:56:52 2020 -0700
+
+    Add files via upload
+
+[33mcommit 5af05731f17c485e2102e9e88d3805876414a45f[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:55:41 2020 -0700
+
+    Create del.md
+
+[33mcommit 65beb2644b753eef8ead33142f73c5b566b8ef9e[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:54:53 2020 -0700
+
+    Add files via upload
+
+[33mcommit 4b460beea09352d44d33568e8d9b42def37d009e[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:53:51 2020 -0700
+
+    Create del.md
+
+[33mcommit 831a79e929b70f968509ae836c77a540289459b9[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:52:54 2020 -0700
+
+    Add files via upload
+
+[33mcommit 7efeb8952635b01e6a448d57249daaa146c311ef[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:51:22 2020 -0700
+
+    Create del.md
+
+[33mcommit 1787a13235878f2415c3ad74c2372dd344543696[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:50:34 2020 -0700
+
+    Add files via upload
+
+[33mcommit 6ec16d7d6a105e1bac93e6952497902f5bd6f7e9[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:49:32 2020 -0700
+
+    Create del.md
+
+[33mcommit f87ac4a90b4a52e6e81abb343c648e572a7ce4df[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:45:42 2020 -0700
+
+    Add files via upload
+
+[33mcommit 1ae1decdcda03ec32e7cc821dbd4c5fd59efc3ed[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:44:19 2020 -0700
+
+    Create del.md
+
+[33mcommit 77b3eea8efd0a4ad7cf05654f4a9346e92443a83[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:43:26 2020 -0700
+
+    Add files via upload
+
+[33mcommit 47a332fed2392958a0d39f286416eada601ecef6[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:41:55 2020 -0700
+
+    Create del.md
+
+[33mcommit 5835deebd668631f203aebba8addddc0391ff031[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:41:25 2020 -0700
+
+    Add files via upload
+
+[33mcommit 40f22c7a98ac2f7a8b119daf27e76181e5979b8e[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:39:57 2020 -0700
+
+    Create del.md
+
+[33mcommit ceec065f5892d8e0ef62fe8deea5d31c339041c9[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:18:33 2020 -0700
+
+    Add files via upload
+
+[33mcommit f9c8be857480c1957a27bc5e0542c0768bfa6129[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:16:55 2020 -0700
+
+    Create del.md
+
+[33mcommit 1e41bd3b813996f5cfeb8dd8aa22a99202d29f18[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:16:19 2020 -0700
+
+    Add files via upload
+
+[33mcommit 8d6b6ee6c266aea4e58bc7ea9f6362429893ca83[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:14:48 2020 -0700
+
+    Create del.md
+
+[33mcommit c85762065741d0b7b27aeed8afb4d97b6e4b3316[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:14:02 2020 -0700
+
+    Add files via upload
+
+[33mcommit eb21f925270a0c090a2003f305061a9f881ab56f[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:12:11 2020 -0700
+
+    Create del.md
+
+[33mcommit 2969c489dbeca147e4a62ded9bf73a68c4945668[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:11:14 2020 -0700
+
+    Add files via upload
+
+[33mcommit 0ec7f390e8c7160512ceb5455985d6139726a514[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:08:12 2020 -0700
+
+    Add files via upload
+
+[33mcommit fd58746d972b694244ee646aac78a226dff2c228[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:06:29 2020 -0700
+
+    Add files via upload
+
+[33mcommit 586532cd046e5531a3a4ff5b7de7bfcc6070e633[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:03:57 2020 -0700
+
+    Create del.md
+
+[33mcommit 7bac4dc48f7f536969f58bb4ed3b5a60d6f996ee[m
+Author: Christa Cheung <christa.cheung@udacity.com>
+Date:   Sun Mar 29 20:03:30 2020 -0700
+
+    delete files not in correct repo
+
+[33mcommit c02c8f88f7dac3e5bb18b0b443a3be6872170799[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:02:46 2020 -0700
+
+    Create del.md
+
+[33mcommit 848c9dcd9d432abc56bcae7926f3549ea4c41816[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 20:01:51 2020 -0700
+
+    Create del.md
+
+[33mcommit 543e71967640aa48b1a292c16640e33b4d1e8070[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 19:59:46 2020 -0700
+
+    Add files via upload
+
+[33mcommit 45127a6b9c68f986e8d7a8cc66130638464f8420[m
+Author: Christa Cheung <christa.cheung@udacity.com>
+Date:   Sun Mar 29 19:54:26 2020 -0700
+
+    get rid of placholder files
+
+[33mcommit ad7dbd008b9691188a2e85e525456661709e505f[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 19:08:04 2020 -0700
+
+    Add files via upload
+
+[33mcommit 7296c87655cf5165840e09c625ebc676e93edbc1[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 19:06:38 2020 -0700
+
+    Delete del.md
+
+[33mcommit 638a966eecc99e47a48a0e5a0312871108370dbd[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 19:06:23 2020 -0700
+
+    Create del.md
+
+[33mcommit 1eee0623c14a52879588920b74be5a1be8e789b5[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 19:05:41 2020 -0700
+
+    Add files via upload
+
+[33mcommit bea82da9a1cac77cfc79bfa5e051483437b12c45[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 19:00:24 2020 -0700
+
+    Create del.md
+
+[33mcommit 2efe8e07718f7b7550c47f88e90170efcea05a94[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Sun Mar 29 18:59:25 2020 -0700
+
+    Create del.md
+
+[33mcommit ecda438f7ad7344545ab0be9b6465ea5251642af[m
+Author: christa-cheung <54732090+christa-cheung@users.noreply.github.com>
+Date:   Tue Jan 7 21:41:05 2020 -0800
+
+    Initial commit
