@@ -60,5 +60,11 @@ class UNetInferenceAgent:
         # correct by running it on one of the volumes in your training set and comparing 
         # with the label in 3D Slicer.
         # <YOUR CODE HERE>
+        mask = np.zeros(volume.shape)
+        for i in range(0, volume.shape[0]):
+            ind_slice = torch.from_numpy(volume[i, : , : ].astype(np.single)).unsqueeze(0).unsqueeze(0)
+            pred = self.model(ind_slice.to(self.device))
+            mask[i,:, :] = torch.argmax(np.squeeze(pred.cpu().detach()), dim = 0)
+         
 
-        return # 
+        return mask 
